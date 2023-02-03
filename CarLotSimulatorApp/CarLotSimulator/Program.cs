@@ -48,6 +48,7 @@ namespace CarLotSimulator
 
             lot.Cars.Add(momCar);
 
+            Console.WriteLine($"Number of cars created: {CarLot.numberOfCars}");
 
             foreach(var car in lot.Cars)
             {
