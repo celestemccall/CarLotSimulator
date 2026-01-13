@@ -20,40 +20,45 @@ namespace CarLotSimulator
             //Done - Set the properties for each of the cars
             //Done - Call each of the methods for each car
 
-            var lot = new CarLot();
+            var Carlot = new CarLot();
 
             var myCar = new Car();
             myCar.Year = 2009;
             myCar.Make = "Infiniti";
             myCar.Model = "G37";
-            myCar.EngineNoise = "quiet";
-            myCar.HonkNoise = "loud";
-            myCar.IsDriveable = "totally driveable";
+            myCar.IsDriveable = true;
 
-            lot.Cars.Add(myCar);
+            myCar.MakeEngineNoise("Vroom");
+            myCar.MakeHonkNoise("Honk");
+            
+            Carlot.ParkingLot.Add(myCar);
+
 
             var wifeCar = new Car()
             {
-                Year = 2007,
-                Make = "Ford",
-                Model = "Focus",
-                EngineNoise = "quiet",
-                HonkNoise = "loud",
-                IsDriveable = "totally driveable"
+                Make = "Acura",
+                Model = "MDX",
+                Year = 2001,
+                IsDriveable = false
+
             };
 
-            lot.Cars.Add(wifeCar);
+            wifeCar.MakeEngineNoise("Crank");
+            wifeCar.MakeHonkNoise("Beep");
+            
+            Carlot.ParkingLot.Add(wifeCar);
 
-            var momCar = new Car( 2020, "Tesla","Model X","quiet","loud","totally driveable" );
 
-            lot.Cars.Add(momCar);
+            var momCar = new Car( 2020, "Tesla","Model X",true );
 
-            Console.WriteLine($"Number of cars created: {CarLot.numberOfCars}");
+            momCar.MakeEngineNoise("Vroom Vroom");
+            momCar.MakeHonkNoise("Beep Beep");
 
-            foreach(var car in lot.Cars)
-            {
-                Console.WriteLine($"Year: {car.Year}, Make: {car.Make}, Model: {car.Model}" );
-            }
+            Carlot.ParkingLot.Add(momCar);
+
+            Carlot.CheckCars();
+
+            
 
 
         }
