@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System;
+
 
 namespace CarLotSimulator;
 
@@ -10,7 +12,7 @@ public class CarLot
     {
         foreach (var vehicle in ParkingLot)
         {
-            System.Console.WriteLine($"{vehicle.Make} {vehicle.Model} {vehicle.Year}");
+            Console.WriteLine($"{vehicle.Make} {vehicle.Model} {vehicle.Year}");
         }
 
 
